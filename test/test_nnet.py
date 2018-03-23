@@ -12,8 +12,6 @@ def test_8x3x8_encoder():
 	training = np.identity(8)
 	autoencoder = nnet.NNET(8,3,8)
 	mse = autoencoder.train(training, training, iters=5000, lr=2.5)
-	nnet_helpers.plot_MSE(mse, "MSE_8x3x8_encoder.pdf", "Error Minimization 8x3x8 Encoder Problem")
-	np.savetxt("8x3x8_output.txt", autoencoder.ao, fmt='%1.6f')
 	assert np.array_equal(training, np.round(autoencoder.ao, 0))
 
 def test_encode_DNA():
