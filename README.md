@@ -1,4 +1,4 @@
-# example
+# Machine Learning with Artificial Neural Nets 
 
 [![Build
 Status](https://travis-ci.org/tcavazos2/MachineLearn_TF.svg?branch=master)](https://travis-ci.org/tcavazos2/MachineLearn_TF)
@@ -24,8 +24,11 @@ to install all the dependencies in `requirements.txt`. Then the package's
 main function (located in `learn/__main__.py`) can be run as follows
 
 ```
-# Run initial alignment 
-python -m learn
+# Run neural network and output predicted value for unknown test sequences
+python -m learn yeast-upstream-1k-negative.fa rap1-lieb-positives.txt rap1-lieb-test.txt
+
+# Perform cross validation for model, outputting accuracy for a different number of learning rates and hidden nodes
+python -m learn yeast-upstream-1k-negative.fa rap1-lieb-positives.txt rap1-lieb-test.txt --optimize
 
 ```
 
